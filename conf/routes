@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+GET           /todo                     controllers.TodoListController.getAll()
+
+#Parametro de ruta dinamica.
+# La notación significa que Play Framework debe capturartodo lo que hay después del prefijo y asignarlo a la variable.
+GET           /todo/:itemId             controllers.TodoListController.getById(itemId: Long)
+
+#
+
+POST          /todo                     controllers.TodoListController.addNewItem()
+
+PUT           /todo/done/:itemId        controllers.TodoListController.markAsDone(itemId: Long)
+
+DELETE        /todo/done                controllers.TodoListController.deleteAllDone()
